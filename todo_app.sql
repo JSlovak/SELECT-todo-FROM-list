@@ -20,8 +20,12 @@ completed_at BOOLEAN NOT NULL DEFAULT false
 );
 
 -- Delete completed column from tasks
+ALTER TABLE tasks
+DROP completed;
 
 -- Add completed_at column to tasks
+ALTER TABLE tasks
+ADD completed_at TIMESTAMP NULL DEFAULT NULL;
 
 --Set any existing tasks updated_at which are null to 0
 
