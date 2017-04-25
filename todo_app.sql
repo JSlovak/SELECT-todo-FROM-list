@@ -48,4 +48,11 @@ SELECT title, description
 FROM tasks
 WHERE title ~* 'mistake';
 
+
 DELETE
+FROM tasks;
+-- WHERE title ~* 'mistake';
+
+-- SELECT *
+-- FROM tasks
+-- ORDER BY title ASC;
