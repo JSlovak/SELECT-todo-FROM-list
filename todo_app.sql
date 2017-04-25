@@ -28,12 +28,21 @@ ALTER TABLE tasks
 ADD completed_at TIMESTAMP NULL DEFAULT NULL;
 
 --Set any existing tasks updated_at which are null to 0
+UPDATE tasks
+SET update_at = now();
+WHERE update_at IS NULL;
 
 -- Disable saving as null in updated_at
+ALTER TABLE tasks
+ALTER COLUMN update_at DROP DEFAULT;
 
 -- Drop default for tasks
+ALTER TABLE tasks
+ALTER COLUMN update_at SET DEFAULT now();
 
 -- Change default for update_at
+ALTER TABLE tasks
+ALTER COLUMN update_at SET DEFAULT NOW();
 
 -- Insert new row without value selectors
 INSERT INTO tasks(title, description) VALUES ('Study SQL', 'Complete this exercise');
@@ -45,6 +54,9 @@ FROM tasks
 WHERE completed_at = false;
 
 -- Complete "Study SQL"
+UPDATE tasks
+SET completed_at = NOW()
+WHERE title = 'Study SQL';
 
 -- Get all tasks by descending creating date
 SELECT *
