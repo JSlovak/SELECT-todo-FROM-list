@@ -50,9 +50,9 @@ WHERE title ~* 'mistake';
 
 
 DELETE
-FROM tasks;
--- WHERE title ~* 'mistake';
+FROM tasks
+WHERE title ~* 'mistake';
 
--- SELECT *
--- FROM tasks
--- ORDER BY title ASC;
+SELECT *
+FROM tasks
+ORDER BY title ASC;
