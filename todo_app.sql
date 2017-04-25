@@ -40,9 +40,9 @@ SELECT *
 FROM tasks
 WHERE title ~* 'mistake';
 
--- DELETE
--- FROM tasks
--- WHERE title = 'third mistake';
+DELETE
+FROM tasks
+WHERE title = 'third mistake';
 
 -- SELECT *
 -- FROM tasks;
