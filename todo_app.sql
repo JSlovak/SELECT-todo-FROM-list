@@ -36,13 +36,16 @@ INSERT INTO tasks(title, description) VALUES ('third mistake', 'another test ent
 SELECT *
 FROM tasks;
 
-SELECT *
+SELECT title
 FROM tasks
 WHERE title ~* 'mistake';
 
 DELETE
 FROM tasks
-WHERE title = 'third mistake';
+WHERE title = 'mistake 1';
 
--- SELECT *
--- FROM tasks;
+SELECT title, description
+FROM tasks
+WHERE title ~* 'mistake';
+
+DELETE
